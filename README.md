@@ -9,23 +9,27 @@ This port currently only support the signing of self-descirptions.
 - JDK >= 11
 - Maven 
 
+## Made with
+- [Vert.x](https://vertx.io/)
+- [Nimbus JOSE + JWT](https://connect2id.com/products/nimbus-jose-jwt)
+
 ## Usage
 - Build the Java application
 ```
-& mvn clean package
+$ mvn clean package
 ```
 - Create a self-description
 ```
-& cp self-description.sample.json self-description.json 
+$ cp self-description.sample.json self-description.json 
 ```
 - Create a config file
 ```
-& cp config.sample.yaml config.yaml 
+$ cp config.sample.yaml config.yaml 
 ```
 - Adjust self-description and config to your needs.
 - Execute the signing process.
 ```
-& java -jar target\self-description-signer-1.0.0-SNAPSHOT-fat.jar
+$ java -jar target\self-description-signer-1.0.0-SNAPSHOT-fat.jar
 ```
 If successful, you will find your timestamped DID, self-signed self-description and a complete self-description 
 signed from the compliance service in the output directory. 
