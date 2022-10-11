@@ -1,0 +1,22 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.mchange.v2" level="warn"/>
+    <logger name="io.netty" level="warn"/>
+    <logger name="io.vertx" level="info"/>
+    <logger name="com.hazelcast" level="info"/>
+    <logger name="org.apache.jena.riot" level="error"/>
+
+    <logger name="io.piveau" level="debug" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

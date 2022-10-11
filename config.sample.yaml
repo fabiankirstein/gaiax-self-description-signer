@@ -1,0 +1,10 @@
+private_key: |
+    "-----BEGIN PRIVATE KEY-----
+    MIIcFFm9234923kMqkcaj3mfX1xWxKeJb...
+    ...
+    ...420v7EsGigA
+    -----END PRIVATE KEY-----"
+verification_method: "did:web:delta-dao.com#X509"
+x5u_url: "https://delta-dao.com/.well-known/x509CertificateChain.pem"
+api_version: "v2206"
+base_url: "https://compliance.gaia-x.eu"
