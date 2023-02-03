@@ -194,9 +194,9 @@ public class SDSigner {
         jwkJSON.put("x5u", x5uURL);
 
         verificationMethodObject.put("@context", "https://w3c-ccg.github.io/lds-jws2020/contexts/v1/");
-        verificationMethodObject.put("id", verificationMethod);
+        verificationMethodObject.put("id", verificationMethod + "#JWK2020-RSA");
         verificationMethodObject.put("type", "JsonWebKey2020");
-        verificationMethodObject.put("controller", "did:web:compliance.gaia-x.eu#JWK2020-RSA");
+        verificationMethodObject.put("controller", verificationMethod);
         verificationMethodObject.put("publicKeyJwk", jwkJSON);
 
         did.put("@context", new JsonArray().add("https://www.w3.org/ns/did/v1"));
@@ -253,11 +253,11 @@ public class SDSigner {
                         writeFile("complete", signResult);
                         promise.complete();
                     }).onFailure(verificationResult -> {
-                        LOGGER.error("✖ Self-description signing with Gaia-X Compliance Service failed");
+                        LOGGER.error("✖ Self-description verfication with Gaia-X Compliance Service failed");
                         promise.fail(verificationResult.getMessage());
                     });
                 }).onFailure(signResult -> {
-                    LOGGER.error("✖ Self-description verification with Gaia-X Compliance Service failed");
+                    LOGGER.error("✖ Self-description signing with Gaia-X Compliance Service failed");
                     promise.fail(signResult.getMessage());
                 });
             } catch (Exception e) {
